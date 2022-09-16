@@ -22,5 +22,11 @@
   "bugs": {
     "url": "https://github.com/shedidthatio/mern_goals_app/issues"
   },
-  "homepage": "https://github.com/shedidthatio/mern_goals_app#readme"
+  "homepage": "https://github.com/shedidthatio/mern_goals_app#readme",
+  "dependencies": {
+    "colors": "^1.4.0",
+    "dotenv": "^16.0.2",
+    "express": "^4.18.1",
+    "mongoose": "^6.6.1"
+  }
 }
