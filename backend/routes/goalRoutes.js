@@ -16,12 +16,20 @@ const {
   deleteGoal,
 } = require('../controllers/goalController')
 
+// bring in protect middleware
+const { protect } = require('../middleware/authMiddleware')
+
 // Create the routes
 // for get and post routes
-router.route('/').get(getGoals).post(setGoal)
-
+router
+  .route('/')
+  .get(protect, getGoals)
+  .post(protect, setGoal)
 // for update and delete routes
-router.route('/:id').delete(deleteGoal).put(updateGoal)
+router
+  .route('/:id')
+  .delete(protect, deleteGoal)
+  .put(protect, updateGoal)
 
 // export the router
 module.exports = router
