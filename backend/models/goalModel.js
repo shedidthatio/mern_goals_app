@@ -8,6 +8,12 @@ const mongoose = require('mongoose')
 // Goal model schema
 const goalSchema = mongoose.Schema(
   {
+    // creates association between a goal and user
+    user: {
+      type: mongoose.Schema.Types.ObjectId,
+      required: true,
+      ref: 'User',
+    },
     text: {
       type: String,
       required: [true, 'Please add text value'],
